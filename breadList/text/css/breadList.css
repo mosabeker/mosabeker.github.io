@@ -1,0 +1,23 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+
+ul li ul{
+	float: left;
+	display: none;
+	background-color: #9A5927;
+	width: 150px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 14pt;
+}
+
+ul li a{
+	color: #F9F59A;
+	text-decoration: none;
+}
