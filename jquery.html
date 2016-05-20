@@ -1,0 +1,52 @@
+<html>
+</style>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js">
+</script>
+
+<head>
+    <title>jQuery goes to DOM-ville</title>
+    <style>
+    #change_me {
+        position: absolute;
+        top: 100px;
+        left: 400px;
+        font: 24px arial;
+    }
+    
+    #move_up #move_down #color #disappear {
+        padding: 5px;
+    }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js">
+    </script>
+</head>
+
+<body>
+    <button id="move_up">up</button>
+    <button id="move_down">down</button>
+    <button id="color">color</button>
+    <button id="disappear">disappear and show</button>
+    <div id="change_me">changeme</div>
+    <script>
+    $(document).ready(function() {
+        $("#move_up").click(function() {
+            $("#change_me").animate({
+                top: 30
+            }, 200);
+        }); //end move_up
+        $("#move_down").click(function() {
+            $("#change_me").animate({
+                top: 500
+            }, 2000);
+        }); //end move_down
+        $("#color").click(function() {
+            $("#change_me").css("color", "purple");
+        }); //end color
+        $("#disappear").click(function() {
+            $("#change_me").toggle("slow");
+        }); //end disappear
+    }); //end doc ready
+    </script>
+</body>
+
+</html>
