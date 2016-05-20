@@ -1,38 +1,78 @@
+
+
 var randomValue=Math.random();
 var A = 0;
 var B = 0;
 
+
+
+var guessValueString = "5678";
+//var guessValue;
+
 randomValue=Math.floor(randomValue*10000);
-randomValue=1234
+randomValue=8965
 
 console.log(String(Math.floor(randomValue)));
 var randomString = String(Math.floor(randomValue));
 
 //console.log(randomString.length);
+//console.log(randomString[1]);
 
-/*
-var checkValue = function(i)
+function checkValue(i)
 {
-
+console.log("---i=---"+i);	
+console.log(randomString[i]);
+//console.log(randomValue[i]);
+//console.log("d"+guessValueString[i]);
+temp2=i;
+	
 	if(randomString[i]===guessValueString[i])
-					{
-						A++;
-					}
-					else
-					{	
-
-						for (var temp=i; temp < randomString.length; temp++)
+	{
+		A++;
+	}
+	else
+	{	
+	
+		
+		for (var temp=0; temp < randomString.length; temp++)
+		{
+		
+			if(i!=temp)
+			{
+					
+					if(temp2>0)
+					{			
+						if(randomString[temp2]===guessValueString[temp])
 						{
-							if(randomString[i]===guessValueString[temp])
-								B++;
-						} 
-
+							B++;
+						//console.log("B="+B)
+						}
+						
+					}
+					else if (temp2 ==0)
+					{
+						if(randomString[temp2]===guessValueString[temp])
+						{
+							B++;
+						//console.log("B="+B)
+						}
 					}
 
-} 
-*/
+					temp2++;
+								
+					console.log("k"+guessValueString[temp]);
 
-var testValue = function(guessValue)
+			}
+			
+			
+		}
+	}
+	
+					
+} 
+
+
+function testValue(guessValue)
 {
 	var guessValueString = guessValue.toString();
 	
@@ -48,13 +88,16 @@ var testValue = function(guessValue)
 					checkValue(i);
 				
 					break;
-			case 1:
-						break;	
+			case 1: 
+					checkValue(i);
+					break;	
 			case 2:
-				break;
+					checkValue(i);
+					break;
 
 			case 3:	
-				break;		
+					checkValue(i);
+					break;		
 
 
 	//		case ath.floor(randomValue-(randomValue/1000)): abc = 3;
@@ -69,4 +112,11 @@ var testValue = function(guessValue)
 }
 
 testValue(1234);
+
+	console.log("A="+A);
+	console.log("B="+B); 
+
+	A=0;
+	B=0;
+
 
